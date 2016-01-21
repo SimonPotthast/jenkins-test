@@ -41,7 +41,7 @@ var caps = selectedCaps ? capsConfig[selectedCaps] : undefined;
 var providerPrefix = process.env.PROVIDER_PREFIX ? process.env.PROVIDER_PREFIX + '-' : '';
 var testName = selectedCaps ? providerPrefix + selectedCaps : providerPrefix + 'default';
 
-var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://www.google.com';
+var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://pages.shoov.io';
 
 var resultsCallback = process.env.DEBUG ? console.log : shoovWebdrivercss.processResults;
 
@@ -60,7 +60,7 @@ describe('Visual monitor testing', function() {
 
   it('should show the home page',function(done) {
     client
-      .url(baseUrl)
+      .url(baseUrl + '/dynamic-page')
       .webdrivercss(testName + '.homepage', {
         name: '1',
         exclude: [],
